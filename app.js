@@ -1,14 +1,37 @@
 // Q1
 
-let nickname = "ごっしー";
+let nickname = "ごっしー";　
 age = 28;
 
-console.log("私のニックネームは" + nickname + "で、年齢は" + String(age) + "歳です。");
+// number型とは数値、小数、特殊な数値（Infinity, -Infinity, NaN）
+// number型例を３つ
+// 0.1, 10, 100
+
+console.log("私のニックネームは" + nickname + "で、年齢は" + age + "歳です。");
 
 // Q2
 
 let languages = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go'];
 console.log("私の好きな言語は" + languages[0] + "です。次は" + languages[3] + "を勉強してみたいです。");
+
+// Javascriptはオブジェクトだけ
+// userがオブジェクト型　
+// []プロパティ
+
+
+// 動物のオブジェクト
+let animal = {
+  name: 'ライオン',
+  age: 5,
+  gender: 'Male',
+  country: 'Africa',
+  info: function() {
+    console.log('この' + animal.name + 'は' +animal.country + '生まれです！');
+  }
+};
+console.log(animal.name);// プロパティ１つ
+
+animal.info();// メソッド１つ
 
 // Q3
 
@@ -46,8 +69,20 @@ console.log(playerList[1].favorites[1]);
 // Q5
 
 let ages = playerList[0].age + playerList[1].age + playerList[2].age;
-average = ages / 3;
-console.log(average);
+// average = ages / 3;
+// console.log(average);
+
+// 配列のオブジェクト
+// JavascriptはArrayとobjectは違うデータ型
+// 配列の各要素としてオブジェクトを格納することができる
+// playerListはオブジェクトの配列、配列の各要素はname,age,favorites
+
+// 要素の数を取得するプロパティを調べる
+// Lengthプロパティを使用することで平均値を変えなくても出力できる
+// let average = ages / playerList.length;
+
+
+
 
 // Q6
 
@@ -72,7 +107,7 @@ sayWorld();
 // favorite: 'card',
 // };
 
-//  birthday プロパティを追加
+//  birthday 値プロパティを追加
 user.birthday = '2000-09-27';
 console.log(user);
 
@@ -114,6 +149,8 @@ calc.divide = function(x, y) {
 
 calc.divide(25, 5);
 
+// ↑口頭レビューでは全部一から言うのではなく省略して説明する
+
 // Q9
 function rem(x, y) {
   let remainder = x % y;
@@ -130,8 +167,13 @@ console.log('5 を 3 で割った余りは' + rem(5, 3) + 'です。');
 // x が スコープ 内で定義されているため
 // x はこの関数内のスコープでのみ有効
 
+// スコープとは？
+// 変数の有効範囲
 
-// 応用問題
+// ｘのスコープはどこからどこ？
+// foo関数の中｛｝内
+
+// 以下応用問題
 
 // Q1
 // 0 ~ 9 のランダムな整数を出力
@@ -143,14 +185,14 @@ console.log(random);
 // 関数 setTimeout を使用し、3 秒後にhelloworld
 
 function hello(callback) {
-  console.log();
+  // console.log();
   setTimeout(callback, 3000);
 }
 
 hello(function() {
   console.log("Hello World!");
 });
-// hello が呼び出され、最初に空の console.log(); が実行
+// hello が呼び出され、最初に空の console.log(); が実行だけど書かなくてもいい
 // その後、setTimeout が実行、3秒後にコールバック関数（console.log("Hello World!");）が実行。
 
 // Q3
@@ -187,3 +229,16 @@ mixed.forEach(item => {
     console.log('not number');
   }
 });
+
+
+// Watanabeメンター
+
+// good
+// 丁寧に一個一個説明してた
+// 用語を適切に使えていた
+// オブジェクトの理解
+
+// bad
+//分からない質問来た時、無言で調べていた
+// ちゃんと「調べていいですか？」など確認をとってからする
+//細かく説明しすぎなのでまとめて説明できる箇所は簡潔に（Q8など）
